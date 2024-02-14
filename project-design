@@ -1,0 +1,59 @@
+Project Design Overview
+---------------Apps
+Employees: Manages employee details, designations, and job descriptions.
+Attendance: Handles attendance records, including IN/OUT times, holidays, and leaves.
+Sales: Manages sales data, including targets, actual sales, and item-specific sales tracking.
+Salaries: Calculates salaries, bonuses, commissions, and deductions.
+
+
+
+-------------Models
+Employee
+Name, CNIC, Designation, Job Description, Salary, Group (for holidays), etc.
+AttendanceRecord
+Employee (ForeignKey), Date, IN Time, OUT Time, Status (Present, Absent, Leave, Half Day), Punctuality Bonus, etc.
+Holiday
+Date, Group, Description.
+SalesRecord
+Date, Total Sales, Sales Per Item, etc.
+SalesTarget
+Employee (ForeignKey), Month, Target Amount, Actual Amount, Achievement (%), etc.
+Overtime
+Employee (ForeignKey), Date, IN Time, OUT Time, Total Overtime, etc.
+SalaryBreakdown
+Employee (ForeignKey), Base Salary, Lunch Allowance, Attendance Bonus, Sales Bonus, Overtime Bonus, Deductions (Half Day, Leaves), Total Salary, etc.
+
+
+
+--------------Forms
+EmployeeForm
+For adding and editing employee details.
+AttendanceForm
+For recording daily attendance, including IN/OUT times and status.
+SalesRecordForm
+For entering monthly sales data.
+OvertimeForm
+For entering overtime hours.
+SalaryForm
+For entering and calculating salary details.
+
+
+
+---------------Templates
+Employee List/Detail:    Display list of employees and individual employee details.
+Attendance Sheet: Show and edit daily attendance records.
+Sales Dashboard: Display sales targets, achievements, and item-specific sales data.
+Salary Slip: Generate detailed salary slips for each employee.
+Overtime Report: Show monthly overtime records and calculations.
+
+
+
+
+---------------Additional Features
+User Authentication: Implement Django's authentication system for managing access to different parts of the system.
+REST API: Consider developing a REST API for interacting with the system programmatically.
+Dynamic Reports: Utilize Django's ORM and possibly third-party libraries for generating dynamic reports and summaries.
+Printing and Exporting: Implement functionality to print or export data (e.g., salary slips, attendance reports) to PDF or Excel formats.
+
+
+

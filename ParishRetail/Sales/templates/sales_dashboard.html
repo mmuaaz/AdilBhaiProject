@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Sales Dashboard</h2>
+<div>
+    <!-- Implement logic to display sales data -->
+    {% for record in sales_records %}
+    <p>Date: {{ record.date }} - Total Sales: {{ record.total_sales }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

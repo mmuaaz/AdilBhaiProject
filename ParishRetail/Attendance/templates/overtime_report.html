@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Overtime Report</h2>
+<div>
+    {% for record in overtime_records %}
+    <p>Date: {{ record.date }} - Employee: {{ record.employee.name }} - Total Overtime: {{ record.total_overtime }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Salary Slip</h2>
+<div>
+    <p>Employee: {{ salary.employee.name }}</p>
+    <p>Period: {{ salary.period }}</p>
+    <p>Base Salary: {{ salary.base_salary }}</p>
+    <p>Lunch Allowance: {{ salary.lunch_allowance }}</p>
+    <!-- Add more salary components as needed -->
+    <p>Total Salary: {{ salary.total_salary }}</p>
+</div>
+{% endblock %}
