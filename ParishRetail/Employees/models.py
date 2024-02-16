@@ -12,4 +12,5 @@ class Employee(models.Model):
     Salary = models.IntegerField()
     holiday_group = models.CharField(max_length =10)
     
-
+    def __str__(self):
+        return f"{self.name} , {self.Last_name}" 

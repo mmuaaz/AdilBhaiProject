@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Mark Attendance</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    {% for form in formset %}
+        <div class="formset-form">
+            {{ form.as_p }}
+        </div>
+    {% endfor %}
+    <button type="submit">Save Attendance</button>
+</form>
+{% endblock %}
